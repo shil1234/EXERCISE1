@@ -8,9 +8,9 @@ def createDataSet():
     labels=['A','A','B','B']
     return  group,labels
 
+print("gregrerererererererererere")
 
+print("gregrerererererererererere")
 
-
-
-
+print("gregrerererererererererere")
 
