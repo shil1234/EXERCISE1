@@ -10,27 +10,13 @@ def createDataSet():
 
 print("gregrerererererererererere")
 
-print("gregrerererererererererere")
+print("AAAAAAAAAAAAAAAAAAAAAAAAAA")
 
-print("gregrerererererererererere")
-
-print("gregrerererererererererere")
-
-print("gregrerererererererererere")
+print("AAAAAAAAAAAAAAAAAAAAAAAAAA")
 
 
-print("gregrerererererererererere")
+print("AAAAAAAAAAAAAAAAAAAAAAAAAA")
 
 
-print("gregrerererererererererere")
+print("AAAAAAAAAAAAAAAAAAAAAAAAAA")
 
-print("gregrerererererererererere")
-print("gregrerererererererererere")
-
-
-print("gregrerererererererererere")
-
-
-print("gregrerererererererererere")
-
-print("gregrerererererererererere")
