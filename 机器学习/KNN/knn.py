@@ -62,14 +62,36 @@ def datingClassTest():
         print("the total error rate is: %f" % (errorCount/float(numTestVecs)))
 
 datingClassTest()
-xx=[4,5,6,7,8,3,32,32,32,3,12,4]
-ss=[1,1,1,1,2,2,2,2,3,3,3,3]
 
-fig=plt.figure()
-ax=fig.add_subplot(111)
-ax.scatter(xx,ss)
+#------------------------------------------------------------------------------------------
+#约会网站配对
+import  numpy as np
 
-plt.show()
+#准备数据
+
+def file2matrix(filename):
+    fr=open(filename)
+    arrayOLines=fr.readlines()
+    numberofLines=len(arrayOLines)
+    returnMat=zeros((numberofLines, 3))
+    classLabelVector=[]
+    indes=0
+    for  line in  arrayOLines:
+        line =line.strip()
+        listFromLine=line.split('\t')
+        returnMat[indes,:]=listFromLine[0:3]
+        classLabelVector.append(int(listFromLine[-1]))
+        indes=indes+1
+
+    return returnMat,classLabelVector
+
+file2matrix('datingTestSet2.txt')
+
+
+
+
+
+
 
 
 
