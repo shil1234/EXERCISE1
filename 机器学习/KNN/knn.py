@@ -1,17 +1,17 @@
 from numpy import  *
-
+import random
 import operator
 
 def createDataSet():
 
-    group=array([[1.2,1.3],[1.1,1.2],[1.4,1.3],[1.1,1.3],[3.0,3.0],[3.2,3.4],[3.0,3.2],[3.2,3.3]])
-    labels=['A','A','A','A','B','B','B','B']
+
+    group = array([[1, 2], [1.1, 2], [1.12, 1.3], [0.9, 1.3], [2.9, 3.0], [2.2, 3.4], [4, 3.2], [3.2, 2.8],[4.9, 4.0], [4.2, 4.4], [4, 4.2], [4.2, 4.8]])
+    labels=['A','A','A','A','B','B','B','B','C','C','C','C']
     return  group,labels
 
 def createTestSet():
-
-    group=array([[1.2,1.3],[1.1,1.2],[1.4,1.3],[1.1,1.3],[3.0,3.0],[3.2,3.4],[3.0,3.2],[3.2,3.3]])
-    labels=['A','A','A','A','B','B','B','B']
+    group = array([[1.2, 1.3], [1.1, 1.2], [1.4, 1.3], [1.1, 1.3], [3.0, 3.0], [3.2, 3.4], [3.0, 3.2], [3.2, 3.3], [2.8, 3.1], [3.3, 3.3]])
+    labels=['A','A','A','A','B','B','B','B','B','C','C']
     return  group,labels
 
 def classify(inx,dataset,labels,k):
@@ -29,19 +29,36 @@ def classify(inx,dataset,labels,k):
                             reverse=True)
     return sortedClassCount[0][0]
 
-
 testSingel=array([2, 2])
+
 dataset,labels=createDataSet()
 result=classify(testSingel,dataset,labels,4)
+
+
 
 print(result)
 
 
 
+#测试算法：作为完整程序验证分类器
+def datingClassTest():
+    hoRatio = 1  #设置测试集比重，前10%作为测试集，后90%作为训练集
+    datingDataMat,datingLabels = createTestSet()
+    m = datingDataMat.shape[0]    #得到样本数量m
+    numTestVecs = int(m*hoRatio)    #得到测试集最后一个样本的位置
+    errorCount = 0.0    #初始化定义错误个数为0
+    for i in range(m):
+        #测试集中元素逐一放进分类器测试，k = 3
+        classifierResult = classify(datingDataMat[i],dataset,labels,3)
+        #输出分类结果与实际label
+        # print("the classifier came back with: %d, the real answer is: %d"% (classifierResult, datingLabels[i]))
+        #若预测结果与实际label不同，则errorCount+1
+        if (classifierResult !=datingLabels[i]): errorCount += 1.0
+        #输出错误率 = 错误的个数 / 总样本个数
+        print(numTestVecs)
+        print("the total error rate is: %f" % (errorCount/float(numTestVecs)))
 
-
-
-
+datingClassTest()
 
 
 
