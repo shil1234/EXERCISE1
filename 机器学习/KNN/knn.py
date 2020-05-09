@@ -8,6 +8,12 @@ def createDataSet():
     labels=['A','A','A','A','B','B','B','B']
     return  group,labels
 
+def createTestSet():
+
+    group=array([[1.2,1.3],[1.1,1.2],[1.4,1.3],[1.1,1.3],[3.0,3.0],[3.2,3.4],[3.0,3.2],[3.2,3.3]])
+    labels=['A','A','A','A','B','B','B','B']
+    return  group,labels
+
 def classify(inx,dataset,labels,k):
     dataSetSize=dataset.shape[0]
     diffMat=tile(inx,[dataSetSize,1])-dataset
@@ -24,9 +30,9 @@ def classify(inx,dataset,labels,k):
     return sortedClassCount[0][0]
 
 
-test=array([-2, -2])
+testSingel=array([2, 2])
 dataset,labels=createDataSet()
-result=classify(test,dataset,labels,4)
+result=classify(testSingel,dataset,labels,4)
 
 print(result)
 
