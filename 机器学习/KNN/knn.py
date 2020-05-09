@@ -37,11 +37,7 @@ testSingel=array([2, 2])
 dataset,labels=createDataSet()
 result=classify(testSingel,dataset,labels,4)
 
-
-
 print(result)
-
-
 
 #测试算法：作为完整程序验证分类器
 def datingClassTest():
@@ -85,20 +81,16 @@ def file2matrix(filename):
 
     return returnMat,classLabelVector
 
-file2matrix('datingTestSet2.txt')
+dataMat,dataLabels=file2matrix('datingTestSet2.txt')
 
+print(dataMat[0:20,:])
 
+print(dataLabels[0:20])
 
+import matplotlib
 
+import matplotlib.pyplot as plt
 
+fig=plt.figure()
 
-
-
-
-
-
-
-
-
-
-
+ax=fig.add_subplot(111)
