@@ -1,6 +1,9 @@
 from numpy import  *
 import random
 import operator
+import matplotlib
+import matplotlib.pyplot as plt
+
 
 def createDataSet():
 
@@ -59,10 +62,14 @@ def datingClassTest():
         print("the total error rate is: %f" % (errorCount/float(numTestVecs)))
 
 datingClassTest()
+xx=[4,5,6,7,8,3,32,32,32,3,12,4]
+ss=[1,1,1,1,2,2,2,2,3,3,3,3]
 
+fig=plt.figure()
+ax=fig.add_subplot(111)
+ax.scatter(xx,ss)
 
-
-
+plt.show()
 
 
 
