@@ -87,16 +87,52 @@ print(dataMat[0:20,:])
 
 print(dataLabels[0:20])
 
-import matplotlib
+# import matplotlib
+#
+# import matplotlib.pyplot as plt
+#
+# fig=plt.figure()
+#
+# ax=fig.add_subplot(111)
+#
+# ax.scatter(dataMat[:,0],dataMat[:,1],15*array(dataLabels),15*array(dataLabels))
+#
+# plt.show()
 
-import matplotlib.pyplot as plt
+#归一化数据
+def autoNorm(dataSet):
+    minVals=dataSet.min(0)
+    maxVals=dataSet.max(0)
+    ranges=maxVals-minVals
+    normDataSet=zeros(shape(dataSet))
+    m=dataSet.shape[0]
+    normDataSet=dataSet-tile(minVals,(m,1))
+    normDataSet=normDataSet/tile(maxVals,(m,1))
+    return normDataSet,ranges,minVals
 
-fig=plt.figure()
 
-ax=fig.add_subplot(111)
+a,b,c=autoNorm(dataMat)
+
+print(a)
+print(b)
+print(c)
+
+#构建完整的系统
 
 
-ax.scatter(dataMat[:,1],dataMat[:,2],15*array(dataLabels),15*array(dataLabels))
 
 
-plt.show()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
