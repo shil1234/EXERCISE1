@@ -94,3 +94,9 @@ import matplotlib.pyplot as plt
 fig=plt.figure()
 
 ax=fig.add_subplot(111)
+
+
+ax.scatter(dataMat[:,1],dataMat[:,2],15*array(dataLabels),15*array(dataLabels))
+
+
+plt.show()
